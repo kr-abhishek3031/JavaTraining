@@ -1,0 +1,117 @@
+2021-08-18 15:26:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE MOVIES (  MOVIEID INT, NAME VARCHAR(255), RELEASEYEAR INT, COUNTRY VARCHAR(255), PRIMARY KEY ( ID )) )[*]"; SQL statement:
+CREATE TABLE Movies (  MovieID int, Name varchar(255), ReleaseYear int, Country varchar(255), PRIMARY KEY ( ID )) ) [42000-200]
+2021-08-18 15:29:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE MOVIES (  MOVIEID INT NOT NULL,NAME VARCHAR(255),RELEASEYEAR INT,COUNTRY VARCHAR(255),PRIMARY KEY ( ID )) )[*]"; SQL statement:
+CREATE TABLE Movies (  MovieID int not NULL,Name varchar(255),ReleaseYear int,Country varchar(255),PRIMARY KEY ( ID )) ) [42000-200]
+2021-08-18 15:30:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE MOVIES (  MOVIEID INT NOT NULL,NAME VARCHAR(255),RELEASEYEAR INT,COUNTRY VARCHAR(255),PRIMARY KEY ( MOVIEID )) )[*]"; SQL statement:
+CREATE TABLE Movies (  MovieID int not NULL,Name varchar(255),ReleaseYear int,Country varchar(255),PRIMARY KEY ( MovieID )) ) [42000-200]
+2021-08-18 15:32:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MOVIES" already exists; SQL statement:
+CREATE TABLE Movies (  MovieID int not NULL,Name varchar(255),ReleaseYear int,Country varchar(255),PRIMARY KEY ( MovieID ))  [42101-200]
+2021-08-18 15:36:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MOVIES" already exists; SQL statement:
+CREATE TABLE Movies (  MovieID int not NULL,Name varchar(255),ReleaseYear int,Country varchar(255),PRIMARY KEY ( MovieID ))  [42101-200]
+2021-08-18 15:37:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MOVIES" already exists; SQL statement:
+CREATE TABLE Movies (  MovieID int not NULL,Name varchar(255),ReleaseYear int,Country varchar(255),PRIMARY KEY ( MovieID ))  [42101-200]
+2021-08-18 15:38:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MOVIES" already exists; SQL statement:
+CREATE TABLE Movies (  MovieID int not NULL,Name varchar(255),ReleaseYear int,Country varchar(255),PRIMARY KEY ( MovieID ))  [42101-200]
+2021-08-18 15:38:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "MOVIES" already exists; SQL statement:
+CREATE TABLE Movies (  MovieID int not NULL,Name varchar(255),ReleaseYear int,Country varchar(255),PRIMARY KEY ( MovieID ))  [42101-200]
+2021-08-18 16:07:57 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "MOVIEID" not found; SQL statement:
+CREATE TABLE Actors (  ActorID int not NULL,Name varchar(255),Country varchar(255),PRIMARY KEY ( MovieID ))  [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.table.Table.getColumn(Table.java:703)
+	at org.h2.table.IndexColumn.mapColumns(IndexColumn.java:115)
+	at org.h2.command.ddl.AlterTableAddConstraint.tryUpdate(AlterTableAddConstraint.java:123)
+	at org.h2.command.ddl.AlterTableAddConstraint.update(AlterTableAddConstraint.java:78)
+	at org.h2.command.ddl.CommandWithColumns.createConstraints(CommandWithColumns.java:83)
+	at org.h2.command.ddl.CreateTable.update(CreateTable.java:133)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:198)
+	at org.h2.command.Command.executeUpdate(Command.java:251)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:228)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:201)
+	at Aug18.Exercise2.CreateActorTable.main(CreateActorTable.java:22)
+2021-08-18 16:09:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column count does not match; SQL statement:
+INSERT INTO Actors  (actorid, name, country) VALUES  (?, ?, ?, ?); [21002-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.command.dml.Insert.prepare(Insert.java:319)
+	at org.h2.command.Parser.prepareCommand(Parser.java:744)
+	at org.h2.engine.Session.prepareLocal(Session.java:657)
+	at org.h2.engine.Session.prepareCommand(Session.java:595)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1235)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:76)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:352)
+	at Aug18.Exercise2.Actors.insertRecord(Actors.java:21)
+	at Aug18.Exercise2.Actors.main(Actors.java:13)
+2021-08-18 16:12:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "MovieID" not found [42122-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:453)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3169)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3268)
+	at org.h2.jdbc.JdbcResultSet.getInt(JdbcResultSet.java:352)
+	at Aug18.Exercise2.Main.showOutput(Main.java:83)
+	at Aug18.Exercise2.Main.main(Main.java:72)
+2021-08-19 10:49:38 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ACTORS" already exists; SQL statement:
+CREATE TABLE Actors (  ActorID int not NULL,Name varchar(255),Country varchar(255),PRIMARY KEY ( ActorID ))  [42101-200]
+2021-08-19 13:24:42 database: wrong user or password; user: "SA"
+org.h2.message.DbException: Wrong user name or password [28000-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:131)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:228)
+	at Aug19.Exercise1.ConnectionFactory.getConnection(ConnectionFactory.java:16)
+	at Aug19.Exercise1.CreateActorTable.main(CreateActorTable.java:17)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 16 more
+2021-08-19 13:42:14 database: wrong user or password; user: "ASDFG"
+org.h2.message.DbException: Wrong user name or password [28000-200]
+	at org.h2.message.DbException.get(DbException.java:205)
+	at org.h2.message.DbException.get(DbException.java:181)
+	at org.h2.message.DbException.get(DbException.java:170)
+	at org.h2.engine.Engine.openSession(Engine.java:131)
+	at org.h2.engine.Engine.openSession(Engine.java:192)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:171)
+	at org.h2.engine.Engine.createSession(Engine.java:166)
+	at org.h2.engine.Engine.createSession(Engine.java:29)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:340)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:173)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:152)
+	at org.h2.Driver.connect(Driver.java:69)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:228)
+	at Aug19.Exercise1.ConnectionFactory.getConnection(ConnectionFactory.java:16)
+	at Aug19.Exercise1.CreateActorTable.main(CreateActorTable.java:17)
+Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name or password [28000-200]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:461)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:429)
+	... 16 more
